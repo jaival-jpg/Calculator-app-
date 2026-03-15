@@ -1,0 +1,5 @@
+{
+  "name": "Calculator Pro",
+  "description": "A modern mobile calculator app with basic, scientific, age, and currency calculators.",
+  "requestFramePermissions": []
+}
