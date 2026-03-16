@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from './Button';
+import { AdBanner } from './AdBanner';
 import { safeEvaluate } from '../utils/math';
 import { CalculationHistoryItem } from '../types';
 
@@ -102,6 +103,9 @@ export function BasicCalculator({ onSaveHistory }: Props) {
             {btn.label}
           </Button>
         ))}
+        <div className="col-span-4 flex justify-center mt-2">
+          <AdBanner />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from './Button';
+import { AdBanner } from './AdBanner';
 import { safeEvaluate } from '../utils/math';
 import { CalculationHistoryItem } from '../types';
 
@@ -52,8 +53,8 @@ export function ScientificCalculator({ onSaveHistory }: Props) {
     { label: 'π', variant: 'scientific', onClick: () => handleInput('π') },
     { label: 'e', variant: 'scientific', onClick: () => handleInput('e') },
     { label: 'x²', variant: 'scientific', onClick: () => handleInput('^2') },
-    { label: 'DEL', variant: 'action', onClick: handleDelete },
-    { label: 'AC', variant: 'action', onClick: handleClear },
+    { label: 'DEL', variant: 'action', onClick: handleDelete, className: '!bg-red-500 !text-white dark:!bg-red-600 dark:!text-white' },
+    { label: 'AC', variant: 'action', onClick: handleClear, className: '!bg-white !text-black dark:!bg-white dark:!text-black' },
 
     { label: 'x⁻¹', variant: 'scientific', onClick: () => handleInput('^-1') },
     { label: '√', variant: 'scientific', onClick: () => handleInput('sqrt(') },
@@ -117,6 +118,9 @@ export function ScientificCalculator({ onSaveHistory }: Props) {
             {btn.label}
           </Button>
         ))}
+        <div className="col-span-5 flex justify-center mt-2">
+          <AdBanner />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from './Button';
+import { NativeAdBanner } from './NativeAdBanner';
 
 export function AgeCalculator() {
   const [day, setDay] = useState('');
@@ -122,6 +123,8 @@ export function AgeCalculator() {
           </div>
         </div>
       )}
+
+      <NativeAdBanner />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { ArrowDownUp, Loader2 } from 'lucide-react';
+import { NativeAdBanner } from './NativeAdBanner';
 
 const CURRENCIES = [
   { code: 'USD', name: 'US Dollar', flag: '🇺🇸' },
@@ -132,6 +133,8 @@ export function CurrencyConverter() {
           </div>
         </div>
       )}
+
+      <NativeAdBanner />
     </div>
   );
 }

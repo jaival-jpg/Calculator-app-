@@ -1,3 +1,5 @@
+import { NativeAdBanner } from './NativeAdBanner';
+
 export function About() {
   return (
     <div className="flex flex-col h-full overflow-y-auto bg-white dark:bg-black p-4 sm:p-6">
@@ -44,6 +46,8 @@ export function About() {
           </div>
         </div>
       </div>
+
+      <NativeAdBanner />
     </div>
   );
 }
