@@ -12,6 +12,7 @@ import { History } from './components/History';
 import { AgeCalculator } from './components/AgeCalculator';
 import { CurrencyConverter } from './components/CurrencyConverter';
 import { About } from './components/About';
+import { HiddenGalleryAuth } from './components/HiddenGalleryAuth';
 import { useHistory } from './hooks/useHistory';
 import { useTheme } from './hooks/useTheme';
 import { Page } from './types';
@@ -34,6 +35,8 @@ export default function App() {
         return <AgeCalculator />;
       case 'currency':
         return <CurrencyConverter />;
+      case 'hidden-gallery':
+        return <HiddenGalleryAuth />;
       case 'about':
         return <About />;
       default:

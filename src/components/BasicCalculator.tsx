@@ -5,10 +5,13 @@ import { safeEvaluate } from '../utils/math';
 import { CalculationHistoryItem } from '../types';
 
 type Props = {
-  onSaveHistory: (item: Omit<CalculationHistoryItem, 'id' | 'timestamp'>) => void;
+  onSaveHistory?: (item: Omit<CalculationHistoryItem, 'id' | 'timestamp'>) => void;
+  vaultMode?: boolean;
+  onVaultSubmit?: (password: string) => void;
+  vaultError?: string;
 };
 
-export function BasicCalculator({ onSaveHistory }: Props) {
+export function BasicCalculator({ onSaveHistory, vaultMode, onVaultSubmit, vaultError }: Props) {
   const [expression, setExpression] = useState('');
   const [result, setResult] = useState('');
 
@@ -35,9 +38,16 @@ export function BasicCalculator({ onSaveHistory }: Props) {
 
   const handleCalculate = () => {
     if (!expression) return;
+    
+    if (vaultMode && onVaultSubmit) {
+      onVaultSubmit(expression);
+      setExpression('');
+      return;
+    }
+
     const res = safeEvaluate(expression);
     setResult(res);
-    if (res !== 'Error') {
+    if (res !== 'Error' && onSaveHistory) {
       onSaveHistory({ expression, result: res, type: 'basic' });
     }
   };
@@ -84,6 +94,11 @@ export function BasicCalculator({ onSaveHistory }: Props) {
   return (
     <div className="flex flex-col h-full bg-white dark:bg-black">
       <div className="flex-1 flex flex-col justify-end p-6 items-end space-y-2">
+        {vaultError && (
+          <div className="text-red-500 text-sm mb-2 w-full text-center">
+            {vaultError}
+          </div>
+        )}
         <div className="text-zinc-500 dark:text-zinc-400 text-2xl h-8 tracking-wider font-light overflow-x-auto whitespace-nowrap w-full text-right scrollbar-hide">
           {expression}
         </div>

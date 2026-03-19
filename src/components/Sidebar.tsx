@@ -6,6 +6,7 @@ import {
   History, 
   CalendarDays, 
   Coins, 
+  Image,
   Share2, 
   Moon, 
   Sun, 
@@ -29,6 +30,7 @@ export function Sidebar({ isOpen, onClose, currentPage, onNavigate, theme, onTog
     { id: 'history', label: 'History', icon: History },
     { id: 'age', label: 'Age Calculator', icon: CalendarDays },
     { id: 'currency', label: 'Currency Converter', icon: Coins },
+    { id: 'hidden-gallery', label: 'Hidden Gallery', icon: Image },
     { id: 'about', label: 'About', icon: Info },
   ] as const;
 

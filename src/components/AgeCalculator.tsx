@@ -107,7 +107,7 @@ export function AgeCalculator() {
       {result && (
         <div className="mt-8 bg-gradient-to-br from-orange-500 to-red-500 p-8 rounded-3xl text-white text-center shadow-lg shadow-orange-500/20">
           <h3 className="text-lg font-medium opacity-90 mb-6">Age Result</h3>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4 mb-8">
             <div className="flex flex-col items-center">
               <span className="text-4xl font-bold mb-1">{result.years}</span>
               <span className="text-sm opacity-80">Years</span>
@@ -121,10 +121,11 @@ export function AgeCalculator() {
               <span className="text-sm opacity-80">Days</span>
             </div>
           </div>
+          <div className="bg-white/10 rounded-2xl p-2">
+            <NativeAdBanner />
+          </div>
         </div>
       )}
-
-      <NativeAdBanner />
     </div>
   );
 }

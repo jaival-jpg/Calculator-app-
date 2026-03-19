@@ -128,13 +128,14 @@ export function CurrencyConverter() {
             <span className="text-5xl font-bold">{result}</span>
             <span className="text-2xl opacity-80 mb-1">{toCurrency}</span>
           </div>
-          <div className="mt-4 text-sm opacity-80">
+          <div className="mt-4 text-sm opacity-80 mb-6">
             1 {fromCurrency} = {(Number(result) / Number(amount)).toFixed(4)} {toCurrency}
+          </div>
+          <div className="bg-white/10 rounded-2xl p-2">
+            <NativeAdBanner />
           </div>
         </div>
       )}
-
-      <NativeAdBanner />
     </div>
   );
 }

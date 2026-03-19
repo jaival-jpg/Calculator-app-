@@ -44,10 +44,12 @@ export function About() {
             <h4 className="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-1">Developer</h4>
             <p className="text-lg font-semibold text-zinc-900 dark:text-white">Jaival Pandya</p>
           </div>
+
+          <div className="pt-6 border-t border-zinc-100 dark:border-zinc-800">
+            <NativeAdBanner />
+          </div>
         </div>
       </div>
-
-      <NativeAdBanner />
     </div>
   );
 }

@@ -14,4 +14,5 @@ export type Page =
   | 'history'
   | 'age'
   | 'currency'
+  | 'hidden-gallery'
   | 'about';
